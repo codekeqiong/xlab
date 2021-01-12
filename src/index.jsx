@@ -1,12 +1,4 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
+import { router } from './router/index';
 
-class SiderDemo extends React.Component {
-  render() {
-    return (
-      <div>我是index.js</div>
-    );
-  }
-}
-
-ReactDOM.render(<SiderDemo />, document.getElementById('root'));
+ReactDOM.render(router, document.getElementById('root'));

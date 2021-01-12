@@ -16,10 +16,10 @@ export function AppHeader(props: { showMenu: boolean; show: (type: boolean) => v
   };
 
   return (
-    <div className="site-layout-background" style={{ padding: 0 }}>
-      <div className={style.leftSide}>X实验室</div>
-      <div className={style.leftSide} style={{ marginRight: 'auto', marginLeft: 10 }}>
-        <Button type="primary" onClick={toggleCollapsed}>
+    <div className={style.layoutBackground}>
+      <div className={style.leftSide}>
+        <span>X实验室</span>
+        <Button className={style.collapsed} type="primary" onClick={toggleCollapsed}>
           {React.createElement(state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
         </Button>
       </div>
@@ -40,7 +40,7 @@ export function AppHeader(props: { showMenu: boolean; show: (type: boolean) => v
                 <br />
               </span>
               &nbsp;
-              <Icon type="caret-down" />
+              <Icon type="caret-down" style={{color: '#1890ff'}}/>
             </a>
           </Dropdown>
         </div>

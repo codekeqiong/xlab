@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Icon, Menu, message } from 'antd';
 import styles from './index.module.less';
 import { IAppMenuItem } from '../../router/common';
-import { withRouter, RouteChildrenProps, useRouteMatch } from 'react-router';
+import { withRouter, RouteChildrenProps } from 'react-router';
 import services from '@/services';
 
 const SubMenu = Menu.SubMenu;
@@ -16,8 +16,7 @@ export const AppMenu = withRouter(function (props: RouteChildrenProps) {
   }, []);
 
   const goMenuUrl = (url: string) => {
-    console.log(url);
-    if (url == '/robot') {
+    if (url === '/robot') {
       window.location.href = `http://waituntil.online:8080/userGroup?authInfo=${localStorage.getItem('userData')}`;
     } else {
       props.history.push(url);
@@ -25,6 +24,7 @@ export const AppMenu = withRouter(function (props: RouteChildrenProps) {
   };
 
   const renderMenu = () => {
+    {console.log('菜单数据data', state)}
     return state.map((menuItem, index) => {
       if (!menuItem.isShow) return;
       const hasChlildren = menuItem.children?.length && menuItem.children?.length > 0;
@@ -43,7 +43,7 @@ export const AppMenu = withRouter(function (props: RouteChildrenProps) {
 
       return (
         <SubMenu key={index} popupClassName={styles.subMenuItem} title={<span><Icon type={menuItem.icon} /><span>{menuItem.name}</span></span>}>
-          {menuItem.children?.map((item, cIndex) => {
+          {menuItem.children?.map((item) => {
             return (<Menu.Item className={styles.subMenuItem} onClick={() => { goMenuUrl(item.url) }} key={item.url}>{item.name}</Menu.Item>);
           })}
         </SubMenu>
@@ -59,6 +59,8 @@ export const AppMenu = withRouter(function (props: RouteChildrenProps) {
 
   return (
     <div className={styles.container}>
+      {/* defaultSelectedKeys	 初始选中的菜单项key数组 
+          defaultOpenKeys	 初始展开的SubMenu菜单项key数组*/}
       <Menu defaultOpenKeys={openKeys} defaultSelectedKeys={[props.location.pathname]} mode="inline">
         {renderMenu()}
       </Menu>

@@ -10,11 +10,11 @@ export const common = {
         name: '数据总览',
         icon: 'setting',
         isOpen: false,
-        isShow: false,
+        isShow: true,
         children: [
           {
             name: '总览子菜单',
-            url: '/',
+            url: '/overview',
           }
         ],
       },
@@ -22,7 +22,7 @@ export const common = {
         name: '用户权限',
         icon: 'setting',
         isOpen: false,
-        isShow: false,
+        isShow: true,
         children: [
           {
             name: '视图权限',
