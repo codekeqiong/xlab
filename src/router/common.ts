@@ -14,7 +14,7 @@ export const common = {
         children: [
           {
             name: '总览子菜单',
-            url: '/overview',
+            url: '/',
           }
         ],
       },

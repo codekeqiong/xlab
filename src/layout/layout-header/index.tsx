@@ -19,7 +19,7 @@ export function AppHeader(props: { showMenu: boolean; show: (type: boolean) => v
     <div className={style.layoutBackground}>
       <div className={style.leftSide}>
         <span>X实验室</span>
-        <Button className={style.collapsed} type="primary" onClick={toggleCollapsed}>
+        <Button className={style.collapsed} type="primary" size="small" onClick={toggleCollapsed}>
           {React.createElement(state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
         </Button>
       </div>

@@ -15,7 +15,7 @@ const RouteMap: RouteMapType[] = [{
   component: lazyLoad(() => import('@/page/overview')),
   exact: true,
 },{
-  path: '/',
+  path: '/userAuth',
   component: lazyLoad(() => import('@/page/testPage')),
   exact: true,
 }]

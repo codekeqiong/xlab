@@ -49,9 +49,9 @@ export function AppPage({ children }: IProps) {
         <div className={styles.menu} style={{ width: showMenu ? '' : 240, display: showMenu ? 'none' : 'block' }}>
           <AppMenu />
         </div>
-        <div className={styles.contentWrap} style={{ background: pathname === '/skinModules' ? '#ffffff' : '', padding: showMenu ? '0' : '' }} id="page-contentWrap">
+        <div className={styles.contentWrap} id="page-contentWrap">
           <div
-            style={{ background: showMenu ? '#fff' : '', padding: showMenu && pathname === '/skinModules' ? '0' : '', minWidth: showMenu ? '' : 1200 }}
+            style={{ background: showMenu ? '#fff' : '' }}
             className={styles.content}
           >
             {children}
