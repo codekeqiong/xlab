@@ -23,7 +23,7 @@ export function AppPage({ children }: IProps) {
   }, [pathname]);
 
   const allow = AllRouter.filter(x => {
-    let str = x.path.match(/.*(?=:)/)?.[0];
+    const str = x.path.match(/.*(?=:)/)?.[0];
     return (x.path === pathname && x.path) || (str && pathname.match(new RegExp(str))?.[0]);
   });
 
